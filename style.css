@@ -1,0 +1,19 @@
+body { background-color:white; }
+
+#container { margin: auto; }
+
+.link { stroke: black; }
+
+#flags {
+  position: absolute;
+}
+
+.flag {
+  width: 10px;
+	height: 11px;
+  position: absolute;
+  background: black;
+}
+.footerSvg{
+  width: 32px;
+}
