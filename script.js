@@ -10,7 +10,7 @@ var svg = d3.select("body").append("svg")
   .attr("width",width)
   .attr("height",height);
 
-d3.json("https://raw.githubusercontent.com/DealPete/forceDirected/master/countries.json",function(data){ 
+d3.json("https://raw.githubusercontent.com/opentensor/bittensor/visualizeer/graph.json",function(data){ 
   // Extract the nodes and links from the data.
   var nodes = data["nodes"];
   var links = data["links"];
@@ -30,7 +30,7 @@ d3.json("https://raw.githubusercontent.com/DealPete/forceDirected/master/countri
 // distance (normally in pixels) that we'd like to have between
 // nodes that are connected. (It is, thus, the length we'd
 // like our links to have.)
-    .linkDistance(300)
+    .linkDistance(200)
 //now so it's time to turn
 // things over to the force layout. Here we go.
     .start();
@@ -58,7 +58,6 @@ d3.json("https://raw.githubusercontent.com/DealPete/forceDirected/master/countri
   // Now it's the nodes turn. Each node is drawn as a flag.
   var node = d3.select('#flags').selectAll('img')
     .data(force.nodes())
-    .enter().append('img')
   //we return the exact flag of each country from the image
     .attr('class', function (d) { return 'flag flag-' + d.code; })
   //we call some classes to handle the mouse
